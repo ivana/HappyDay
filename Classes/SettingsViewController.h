@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+#define kHourComponent 0 
+#define kMinuteComponent 1
 
-@interface SettingsViewController : UIViewController {
-    
+@interface SettingsViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
+{
+  UIPickerView * timePicker;
+  NSArray * hours;
+  NSArray * minutes;
 }
+@property (nonatomic, retain) IBOutlet UIPickerView * timePicker;
+@property (nonatomic, retain) NSArray * hours, * minutes;
 
 @end
