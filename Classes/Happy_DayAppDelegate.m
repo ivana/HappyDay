@@ -11,10 +11,7 @@
 
 @implementation Happy_DayAppDelegate
 
-
-@synthesize window;
-
-@synthesize tabBarController;
+@synthesize window, tabBarController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
@@ -22,7 +19,7 @@
   // Add the tab bar controller's current view as a subview of the window
   [window addSubview:tabBarController.view];
   [window makeKeyAndVisible];
-    return YES;
+  return YES;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -34,7 +31,7 @@
 
   [window release];
   [tabBarController release];
-    [super dealloc];
+  [super dealloc];
 }
 
 /*
