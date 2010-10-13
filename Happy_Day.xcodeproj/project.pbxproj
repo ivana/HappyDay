@@ -1,0 +1,464 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C43EB0B12622B61007872D6 /* HappyDayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C43EB0A12622B61007872D6 /* HappyDayTest.m */; };
+		2C43EB0C12622B7A007872D6 /* HappyDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C994ECA1262224600D00065 /* HappyDay.m */; };
+		2C994EA2126221AC00D00065 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C994EA1126221AC00D00065 /* UIKit.framework */; };
+		2C994EA4126221AC00D00065 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C994EA3126221AC00D00065 /* Foundation.framework */; };
+		2C994EA6126221AC00D00065 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C994EA5126221AC00D00065 /* CoreGraphics.framework */; };
+		2C994EAB126221AC00D00065 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C994EA9126221AC00D00065 /* InfoPlist.strings */; };
+		2C994EAD126221AC00D00065 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C994EAC126221AC00D00065 /* main.m */; };
+		2C994EB0126221AC00D00065 /* Happy_DayAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C994EAF126221AC00D00065 /* Happy_DayAppDelegate.m */; };
+		2C994EB3126221AC00D00065 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C994EB1126221AC00D00065 /* MainWindow.xib */; };
+		2C994EB6126221AC00D00065 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C994EB5126221AC00D00065 /* FirstViewController.m */; };
+		2C994EB9126221AC00D00065 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C994EB8126221AC00D00065 /* SecondViewController.m */; };
+		2C994EBC126221AC00D00065 /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C994EBA126221AC00D00065 /* FirstView.xib */; };
+		2C994EBF126221AC00D00065 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C994EBD126221AC00D00065 /* SecondView.xib */; };
+		2C994ECB1262224600D00065 /* HappyDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C994ECA1262224600D00065 /* HappyDay.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2C30649712622368005E335D /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
+		2C43EB0512622B2B007872D6 /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C43EB0A12622B61007872D6 /* HappyDayTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HappyDayTest.m; sourceTree = "<group>"; };
+		2C994E9E126221AC00D00065 /* Happy_Day.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happy_Day.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C994EA1126221AC00D00065 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2C994EA3126221AC00D00065 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2C994EA5126221AC00D00065 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2C994EA7126221AC00D00065 /* Happy_Day-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Happy_Day-Info.plist"; sourceTree = "<group>"; };
+		2C994EA8126221AC00D00065 /* Happy_Day_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Happy_Day_Prefix.pch; sourceTree = "<group>"; };
+		2C994EAA126221AC00D00065 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2C994EAC126221AC00D00065 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2C994EAE126221AC00D00065 /* Happy_DayAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Happy_DayAppDelegate.h; sourceTree = "<group>"; };
+		2C994EAF126221AC00D00065 /* Happy_DayAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Happy_DayAppDelegate.m; sourceTree = "<group>"; };
+		2C994EB2126221AC00D00065 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		2C994EB4126221AC00D00065 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		2C994EB5126221AC00D00065 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		2C994EB7126221AC00D00065 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		2C994EB8126221AC00D00065 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		2C994EBB126221AC00D00065 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstView.xib; sourceTree = "<group>"; };
+		2C994EBE126221AC00D00065 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondView.xib; sourceTree = "<group>"; };
+		2C994EC91262224600D00065 /* HappyDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HappyDay.h; path = ../HappyDay.h; sourceTree = "<group>"; };
+		2C994ECA1262224600D00065 /* HappyDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HappyDay.m; path = ../HappyDay.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C43EB0212622B2B007872D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C994E9B126221AC00D00065 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C994EA2126221AC00D00065 /* UIKit.framework in Frameworks */,
+				2C994EA4126221AC00D00065 /* Foundation.framework in Frameworks */,
+				2C994EA6126221AC00D00065 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C43EB0812622B4A007872D6 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				2C43EB0A12622B61007872D6 /* HappyDayTest.m */,
+			);
+			name = Test;
+			sourceTree = "<group>";
+		};
+		2C994E8F126221AC00D00065 = {
+			isa = PBXGroup;
+			children = (
+				2C994E96126221AC00D00065 /* Classes */,
+				2C994E97126221AC00D00065 /* Other Sources */,
+				2C994E98126221AC00D00065 /* Resources */,
+				2C994E99126221AC00D00065 /* Frameworks */,
+				2C994E9F126221AC00D00065 /* Products */,
+				2C30649712622368005E335D /* UnitTests-Info.plist */,
+			);
+			sourceTree = "<group>";
+		};
+		2C994E96126221AC00D00065 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2C43EB0812622B4A007872D6 /* Test */,
+				2C994ECC1262225300D00065 /* Model */,
+				2C994EAE126221AC00D00065 /* Happy_DayAppDelegate.h */,
+				2C994EAF126221AC00D00065 /* Happy_DayAppDelegate.m */,
+				2C994EB4126221AC00D00065 /* FirstViewController.h */,
+				2C994EB5126221AC00D00065 /* FirstViewController.m */,
+				2C994EB7126221AC00D00065 /* SecondViewController.h */,
+				2C994EB8126221AC00D00065 /* SecondViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		2C994E97126221AC00D00065 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2C994EA8126221AC00D00065 /* Happy_Day_Prefix.pch */,
+				2C994EAC126221AC00D00065 /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		2C994E98126221AC00D00065 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2C994EA7126221AC00D00065 /* Happy_Day-Info.plist */,
+				2C994EA9126221AC00D00065 /* InfoPlist.strings */,
+				2C994EB1126221AC00D00065 /* MainWindow.xib */,
+				2C994EBA126221AC00D00065 /* FirstView.xib */,
+				2C994EBD126221AC00D00065 /* SecondView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2C994E99126221AC00D00065 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C994EA1126221AC00D00065 /* UIKit.framework */,
+				2C994EA3126221AC00D00065 /* Foundation.framework */,
+				2C994EA5126221AC00D00065 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2C994E9F126221AC00D00065 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C994E9E126221AC00D00065 /* Happy_Day.app */,
+				2C43EB0512622B2B007872D6 /* UnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C994ECC1262225300D00065 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2C994EC91262224600D00065 /* HappyDay.h */,
+				2C994ECA1262224600D00065 /* HappyDay.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2C43EB0412622B2B007872D6 /* UnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C43EB0912622B4A007872D6 /* Build configuration list for PBXNativeTarget "UnitTests" */;
+			buildPhases = (
+				2C43EB0012622B2B007872D6 /* Resources */,
+				2C43EB0112622B2B007872D6 /* Sources */,
+				2C43EB0212622B2B007872D6 /* Frameworks */,
+				2C43EB0312622B2B007872D6 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UnitTests;
+			productName = UnitTests;
+			productReference = 2C43EB0512622B2B007872D6 /* UnitTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2C994E9D126221AC00D00065 /* Happy_Day */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C994EC2126221AC00D00065 /* Build configuration list for PBXNativeTarget "Happy_Day" */;
+			buildPhases = (
+				2C994E9A126221AC00D00065 /* Sources */,
+				2C994E9B126221AC00D00065 /* Frameworks */,
+				2C994E9C126221AC00D00065 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Happy_Day;
+			productName = Happy_Day;
+			productReference = 2C994E9E126221AC00D00065 /* Happy_Day.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C994E91126221AC00D00065 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 2C994E94126221AC00D00065 /* Build configuration list for PBXProject "Happy_Day" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2C994E8F126221AC00D00065;
+			productRefGroup = 2C994E9F126221AC00D00065 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C994E9D126221AC00D00065 /* Happy_Day */,
+				2C43EB0412622B2B007872D6 /* UnitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C43EB0012622B2B007872D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C994E9C126221AC00D00065 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C994EAB126221AC00D00065 /* InfoPlist.strings in Resources */,
+				2C994EB3126221AC00D00065 /* MainWindow.xib in Resources */,
+				2C994EBC126221AC00D00065 /* FirstView.xib in Resources */,
+				2C994EBF126221AC00D00065 /* SecondView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C43EB0312622B2B007872D6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C43EB0112622B2B007872D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C43EB0C12622B7A007872D6 /* HappyDay.m in Sources */,
+				2C43EB0B12622B61007872D6 /* HappyDayTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C994E9A126221AC00D00065 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C994EAD126221AC00D00065 /* main.m in Sources */,
+				2C994EB0126221AC00D00065 /* Happy_DayAppDelegate.m in Sources */,
+				2C994EB6126221AC00D00065 /* FirstViewController.m in Sources */,
+				2C994EB9126221AC00D00065 /* SecondViewController.m in Sources */,
+				2C994ECB1262224600D00065 /* HappyDay.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2C994EA9126221AC00D00065 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C994EAA126221AC00D00065 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2C994EB1126221AC00D00065 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C994EB2126221AC00D00065 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		2C994EBA126221AC00D00065 /* FirstView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C994EBB126221AC00D00065 /* en */,
+			);
+			name = FirstView.xib;
+			sourceTree = "<group>";
+		};
+		2C994EBD126221AC00D00065 /* SecondView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C994EBE126221AC00D00065 /* en */,
+			);
+			name = SecondView.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2C43EB0612622B2C007872D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = "UnitTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = UnitTests;
+				SDKROOT = iphonesimulator4.0;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		2C43EB0712622B2C007872D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				INFOPLIST_FILE = "UnitTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = UnitTests;
+				SDKROOT = iphonesimulator4.0;
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		2C994EC0126221AC00D00065 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.0;
+			};
+			name = Debug;
+		};
+		2C994EC1126221AC00D00065 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.0;
+			};
+			name = Release;
+		};
+		2C994EC3126221AC00D00065 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Happy_Day_Prefix.pch;
+				INFOPLIST_FILE = "Happy_Day-Info.plist";
+				PRODUCT_NAME = Happy_Day;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2C994EC4126221AC00D00065 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Happy_Day_Prefix.pch;
+				INFOPLIST_FILE = "Happy_Day-Info.plist";
+				PRODUCT_NAME = Happy_Day;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C43EB0912622B4A007872D6 /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C43EB0612622B2C007872D6 /* Debug */,
+				2C43EB0712622B2C007872D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C994E94126221AC00D00065 /* Build configuration list for PBXProject "Happy_Day" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C994EC0126221AC00D00065 /* Debug */,
+				2C994EC1126221AC00D00065 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C994EC2126221AC00D00065 /* Build configuration list for PBXNativeTarget "Happy_Day" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C994EC3126221AC00D00065 /* Debug */,
+				2C994EC4126221AC00D00065 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2C994E91126221AC00D00065 /* Project object */;
+}

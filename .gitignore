@@ -1,0 +1,5 @@
+build/*
+*.mode1v3
+*.pbxuser
+Happy_Day.xcodeproj/project.xcworkspace/
+Happy_Day.xcodeproj/xcuserdata/
