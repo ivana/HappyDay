@@ -9,8 +9,18 @@
 #import <UIKit/UIKit.h>
 
 
-@interface StatsViewController : UIViewController {
-    
+@interface StatsViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
+{
+  UILabel * infoLabel;
+  UIButton * happyPercentageButton;
+  
+  UIPickerView * statsPeriodPicker;
+  NSArray * statsPeriodData;
 }
+@property (nonatomic, retain) IBOutlet UILabel * infoLabel;
+@property (nonatomic, retain) IBOutlet UIButton * happyPercentageButton;
+
+@property (nonatomic, retain) IBOutlet UIPickerView * statsPeriodPicker;
+@property (nonatomic, retain) NSArray * statsPeriodData;
 
 @end

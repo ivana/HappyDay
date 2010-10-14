@@ -11,6 +11,8 @@
 
 @implementation StatsViewController
 
+@synthesize infoLabel, happyPercentageButton, statsPeriodPicker, statsPeriodData;
+
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -21,12 +23,13 @@
 }
 */
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void) viewDidLoad 
+{
+  self.statsPeriodData = [[NSArray alloc] initWithObjects:@"from the first day", @"1 week back", @"1 month back", @"3 months back", @"6 months back", @"1 year back", nil];
+  [self.statsPeriodPicker selectRow:1 inComponent:0 animated:NO];
+  
+  [super viewDidLoad];
 }
-*/
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -43,16 +46,41 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+- (void)viewDidUnload
+{
+  self.infoLabel = nil;
+  self.happyPercentageButton = nil;
+  self.statsPeriodPicker = nil;
+  self.statsPeriodData = nil;
+  [super viewDidUnload];
 }
 
 
-- (void)dealloc {
-    [super dealloc];
+- (void)dealloc
+{
+  [infoLabel release];
+  [happyPercentageButton release];
+  [statsPeriodPicker release];
+  [statsPeriodData release];
+  [super dealloc];
 }
 
+#pragma mark - 
+#pragma mark Picker Data Source Methods 
+- (NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView 
+{
+  return 1;
+} 
+
+- (NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component 
+{
+  return [statsPeriodData count];
+} 
+
+#pragma mark Picker Delegate Methods 
+- (NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{ 
+  return [statsPeriodData objectAtIndex:row];
+}
 
 @end
