@@ -20,4 +20,6 @@
 @property (nonatomic, retain) IBOutlet UIPickerView * timePicker;
 @property (nonatomic, retain) NSArray * hours, * minutes;
 
+- (IBAction)promptChanged:(id)sender;
+
 @end

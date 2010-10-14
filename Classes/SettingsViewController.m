@@ -12,6 +12,14 @@
 
 @synthesize timePicker, hours, minutes;
 
+- (IBAction) promptChanged:(id)sender 
+{
+  UISwitch * prompt = (UISwitch *) sender;
+  
+  if (prompt.isOn) [timePicker setUserInteractionEnabled:YES];
+  else [timePicker setUserInteractionEnabled:NO];
+}
+
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
