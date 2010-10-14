@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 
 
-@interface HappyTodayViewController : UIViewController {
-    
+@interface HappyTodayViewController : UIViewController
+{
+  
 }
+
+- (IBAction) happyTodayClicked:(id)sender;
 
 @end

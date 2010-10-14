@@ -8,8 +8,28 @@
 
 #import "HappyTodayViewController.h"
 
+#define kYesTag 1
+
 
 @implementation HappyTodayViewController
+
+- (IBAction) happyTodayClicked:(id)sender
+{
+  UIButton * buttonClicked = (UIButton *) sender;
+  NSString * feedbackMessage = [[NSString alloc] init];
+  
+  if (buttonClicked.tag == kYesTag) {
+    feedbackMessage = @"Good to hear! See you tomorrow!";
+  } else {
+    feedbackMessage = @"Sorry to hear that :( Hope things would be better tomorrow...";
+  }
+  
+  UIAlertView * feedback = [[UIAlertView alloc] initWithTitle:nil message:feedbackMessage delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
+  [feedback show];
+  
+  [feedback release];
+  [feedbackMessage release];
+}
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
