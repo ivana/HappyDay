@@ -46,7 +46,7 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidUnload
+- (void) viewDidUnload
 {
   self.infoLabel = nil;
   self.happyPercentageButton = nil;
@@ -56,7 +56,7 @@
 }
 
 
-- (void)dealloc
+- (void) dealloc
 {
   [infoLabel release];
   [happyPercentageButton release];
