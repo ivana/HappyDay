@@ -13,6 +13,32 @@
 
 @synthesize infoLabel, happyPercentageButton, statsPeriodPicker, statsPeriodData;
 
+-(IBAction) percentageClicked:(id)sender
+{
+  NSString * buttonTitle = [sender titleForState:UIControlStateNormal];
+  NSInteger happyPercentage = [[[buttonTitle componentsSeparatedByString:@"%"] objectAtIndex:0] integerValue];
+  
+  NSString * happyDescTitle = [[NSString alloc] initWithFormat:@"%d%% happy", happyPercentage];
+  NSString * happyDescMessage = [[NSString alloc] init];
+  
+  if (happyPercentage >= 80) {
+    happyDescMessage = @"Congrats! You're a happy person!";
+  } else if (happyPercentage < 80 && happyPercentage > 50) {
+    happyDescMessage = @"Mostly happy. Still, there's a lot for you to be done.";
+  } else if (happyPercentage == 50) {
+    happyDescMessage = @"Even Steven. Cross to the bright side already!";
+  } else { // happyPercentage < 50
+    happyDescMessage = @"Oh, dear. Seems like your days have been gloomy and blue :( Now do something about it!";
+  }
+    
+  UIAlertView * happyDesc = [[UIAlertView alloc] initWithTitle:happyDescTitle message:happyDescMessage delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
+  [happyDesc show];
+  
+  [happyDesc release];
+  [happyDescMessage release];
+  [happyDescTitle release];
+}
+
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {

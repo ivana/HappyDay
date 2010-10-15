@@ -23,4 +23,6 @@
 @property (nonatomic, retain) IBOutlet UIPickerView * statsPeriodPicker;
 @property (nonatomic, retain) NSArray * statsPeriodData;
 
+-(IBAction) percentageClicked:(id)sender;
+
 @end
