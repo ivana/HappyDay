@@ -440,6 +440,7 @@
 				GCC_PREFIX_HEADER = Happy_Day_Prefix.pch;
 				INFOPLIST_FILE = "Happy_Day-Info.plist";
 				PRODUCT_NAME = Happy_Day;
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -453,6 +454,7 @@
 				GCC_PREFIX_HEADER = Happy_Day_Prefix.pch;
 				INFOPLIST_FILE = "Happy_Day-Info.plist";
 				PRODUCT_NAME = Happy_Day;
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
