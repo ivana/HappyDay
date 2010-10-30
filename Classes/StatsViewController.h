@@ -11,13 +11,13 @@
 
 @interface StatsViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 {
-  UILabel * infoLabel;
+  UILabel * infoLabel, * sinceLabel;
   UIButton * happyPercentageButton;
   
   UIPickerView * statsPeriodPicker;
   NSArray * statsPeriodData;
 }
-@property (nonatomic, retain) IBOutlet UILabel * infoLabel;
+@property (nonatomic, retain) IBOutlet UILabel * infoLabel, * sinceLabel;
 @property (nonatomic, retain) IBOutlet UIButton * happyPercentageButton;
 
 @property (nonatomic, retain) IBOutlet UIPickerView * statsPeriodPicker;

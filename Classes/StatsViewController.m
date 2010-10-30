@@ -11,7 +11,7 @@
 
 @implementation StatsViewController
 
-@synthesize infoLabel, happyPercentageButton, statsPeriodPicker, statsPeriodData;
+@synthesize infoLabel, sinceLabel, happyPercentageButton, statsPeriodPicker, statsPeriodData;
 
 -(IBAction) percentageClicked:(id)sender
 {
