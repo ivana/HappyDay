@@ -52,7 +52,7 @@
 - (void) viewDidLoad 
 {
   self.statsPeriodData = [[NSArray alloc] initWithObjects:@"from the first day", @"1 week back", @"1 month back", @"3 months back", @"6 months back", @"1 year back", nil];
-  [self.statsPeriodPicker selectRow:1 inComponent:0 animated:NO];
+  [self.statsPeriodPicker selectRow:1 inComponent:0 animated:NO]; // 1 week back is default
   
   [super viewDidLoad];
 }
@@ -107,6 +107,33 @@
 - (NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 { 
   return [statsPeriodData objectAtIndex:row];
+}
+
+- (void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component 
+{
+//  NSString * selectedPeriod = [self.statsPeriodData objectAtIndex:row];
+  switch (row) {
+  case 0: // from the first day
+    [self.happyPercentageButton setTitle:@"1% happy" forState:UIControlStateNormal];
+    break;
+  case 1: // 1 week back
+    [self.happyPercentageButton setTitle:@"80% happy" forState:UIControlStateNormal];
+    break;
+  case 2: // 1 month back
+    [self.happyPercentageButton setTitle:@"51% happy" forState:UIControlStateNormal];
+    break;
+  case 3: // 3 months back
+    [self.happyPercentageButton setTitle:@"50% happy" forState:UIControlStateNormal];
+    break;
+  case 4: // 6 months back
+    [self.happyPercentageButton setTitle:@"49% happy" forState:UIControlStateNormal];
+    break;
+  case 5: // 1 year back
+    [self.happyPercentageButton setTitle:@"90% happy" forState:UIControlStateNormal];
+    break;
+  default:
+    [self.happyPercentageButton setTitle:@"0 luck" forState:UIControlStateNormal];
+  }
 }
 
 @end
