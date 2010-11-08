@@ -17,6 +17,6 @@
 @property (retain, nonatomic) NSDate * happyTime;
 @property BOOL happy;
 
--(id) initWithTimeAndHappy: (BOOL) happiness;
+-(id) initWithTimeAndHappy:(BOOL)happiness;
 
 @end

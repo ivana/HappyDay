@@ -13,7 +13,7 @@
 
 @synthesize happyTime, happy;
 
--(id) initWithTimeAndHappy: (BOOL) happiness
+-(id) initWithTimeAndHappy:(BOOL)happiness
 {
   self = [super init];
   if (self) {
