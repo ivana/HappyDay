@@ -8,12 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class HappyDay;
+
 
 @interface HappyTodayViewController : UIViewController
 {
-  
+  HappyDay * happyToday;
 }
+@property (nonatomic, retain) HappyDay * happyToday;
 
-- (IBAction) happyTodayClicked:(id)sender;
+-(NSString *) dataFilePath;
+
+-(IBAction) happyTodayClicked:(id)sender;
+
+-(void) applicationWillTerminate:(NSNotification *)notification;
 
 @end

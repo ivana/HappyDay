@@ -7,20 +7,48 @@
 //
 
 #import "HappyTodayViewController.h"
+#import "HappyDay.h"
 
+#define kFilename @"data.plist"
 #define kYesTag 1
 
 
 @implementation HappyTodayViewController
 
-- (IBAction) happyTodayClicked:(id)sender
+@synthesize happyToday;
+
+
+-(NSString *) dataFilePath
+{ 
+  NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+  NSString * documentsDirectory = [paths objectAtIndex:0]; 
+  
+  return [documentsDirectory stringByAppendingPathComponent:kFilename];
+}
+
+
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+-(void) viewDidLoad
+{
+  self.happyToday = [[HappyDay alloc] init];
+  
+  UIApplication * app = [UIApplication sharedApplication]; 
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillTerminate:) name:UIApplicationWillTerminateNotification object:app];
+  
+  [super viewDidLoad];
+}
+
+
+-(IBAction) happyTodayClicked:(id)sender
 {
   UIButton * buttonClicked = (UIButton *) sender;
   NSString * feedbackMessage = [[NSString alloc] init];
   
   if (buttonClicked.tag == kYesTag) {
+    [self.happyToday setHappy:YES];
     feedbackMessage = @"Good to hear! See you tomorrow!";
   } else {
+    [self.happyToday setHappy:NO];
     feedbackMessage = @"Sorry to hear that :( Hope things would be better tomorrow...";
   }
   
@@ -31,6 +59,45 @@
   [feedbackMessage release];
 }
 
+
+-(void) applicationWillTerminate:(NSNotification *)notification
+{
+  NSString * filePath = [self dataFilePath];
+  NSFileManager * fileManager = [[NSFileManager alloc] init];
+  
+  NSMutableDictionary * happiness;
+  NSString * happyString;
+  
+  NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
+  [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+  [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+  
+  if ([fileManager fileExistsAtPath:filePath]) {
+    happiness = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+    
+    NSLog(@"Initialized from file with content: %@", happiness);
+    
+  } else {
+    happiness = [[NSMutableDictionary alloc] init];
+    [fileManager createFileAtPath:filePath contents:nil attributes:nil];
+    
+    NSLog(@"File created and initialized.");
+  }
+  
+  happyString = [[NSString alloc] initWithFormat:@"%d", [happyToday happy]];
+
+  [happiness setValue:happyString forKey:[dateFormatter stringFromDate:[NSDate date]]];
+  NSLog(@"Happiness with the newest entry: %@", happiness);
+
+  BOOL result = [happiness writeToFile:[self dataFilePath] atomically:YES];
+  NSLog(@"Written to file: %d", result);
+  
+  [fileManager release];
+  [happiness release];
+  [happyString release];
+  [dateFormatter release];
+}
+
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -38,13 +105,6 @@
         // Custom initialization
     }
     return self;
-}
-*/
-
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
 }
 */
 
@@ -63,16 +123,16 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+-(void) viewDidUnload
+{
+  self.happyToday = nil;
+  [super viewDidUnload];
 }
 
-
-- (void)dealloc {
-    [super dealloc];
+-(void) dealloc
+{
+  [happyToday release];
+  [super dealloc];
 }
-
 
 @end
