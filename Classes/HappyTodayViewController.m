@@ -65,28 +65,25 @@
   NSString * filePath = [self dataFilePath];
   NSFileManager * fileManager = [[NSFileManager alloc] init];
   
-  NSMutableDictionary * happiness;
-  NSString * happyString;
-  
   NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
   [dateFormatter setDateStyle:NSDateFormatterLongStyle];
   [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
   
+  NSMutableDictionary * happiness;
+  NSString * happyString = [[NSString alloc] initWithFormat:@"%d", [happyToday happy]];
+  NSString * happyTimeString = [dateFormatter stringFromDate:[NSDate date]];
+  
   if ([fileManager fileExistsAtPath:filePath]) {
     happiness = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
-    
-    NSLog(@"Initialized from file with content: %@", happiness);
-    
+    NSLog(@"Initialized from file with content: %@", happiness);    
   } else {
     happiness = [[NSMutableDictionary alloc] init];
     [fileManager createFileAtPath:filePath contents:nil attributes:nil];
-    
+    [happiness setValue:happyTimeString forKey:@"since"];
     NSLog(@"File created and initialized.");
   }
-  
-  happyString = [[NSString alloc] initWithFormat:@"%d", [happyToday happy]];
 
-  [happiness setValue:happyString forKey:[dateFormatter stringFromDate:[NSDate date]]];
+  [happiness setValue:happyString forKey:happyTimeString];
   NSLog(@"Happiness with the newest entry: %@", happiness);
 
   BOOL result = [happiness writeToFile:[self dataFilePath] atomically:YES];
