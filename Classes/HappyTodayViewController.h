@@ -14,8 +14,10 @@
 @interface HappyTodayViewController : UIViewController
 {
   HappyDay * happyToday;
+  BOOL happyClicked;
 }
 @property (nonatomic, retain) HappyDay * happyToday;
+@property BOOL happyClicked;
 
 -(IBAction) happyTodayClicked:(id)sender;
 

@@ -15,13 +15,14 @@
 
 @implementation HappyTodayViewController
 
-@synthesize happyToday;
+@synthesize happyToday, happyClicked;
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 -(void) viewDidLoad
 {
   happyToday = [[HappyDay alloc] init];
+  happyClicked = NO;
   
   UIApplication * app = [UIApplication sharedApplication]; 
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillTerminate:) name:UIApplicationWillTerminateNotification object:app];
@@ -34,6 +35,7 @@
 {
   UIButton * buttonClicked = (UIButton *) sender;
   NSString * feedbackMessage = [[NSString alloc] init];
+  happyClicked = YES;
   
   if (buttonClicked.tag == kYesTag) {
     [happyToday setHappy:YES];
@@ -53,37 +55,41 @@
 
 -(void) applicationWillTerminate:(NSNotification *)notification
 {
-  NSString * filePath = [AppHelper dataFilePath];
-  NSFileManager * fileManager = [[NSFileManager alloc] init];
-  
-  NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
-  [dateFormatter setDateStyle:NSDateFormatterLongStyle];
-  [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
-  
-  NSMutableDictionary * happiness;
-  NSString * happyString = [[NSString alloc] initWithFormat:@"%d", [happyToday happy]];
-  NSString * happyTimeString = [dateFormatter stringFromDate:[NSDate date]];
-  
-  if ([fileManager fileExistsAtPath:filePath]) {
-    happiness = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
-    NSLog(@"Initialized from file with content: %@", happiness);    
-  } else {
-    happiness = [[NSMutableDictionary alloc] init];
-    [fileManager createFileAtPath:filePath contents:nil attributes:nil];
-    [happiness setValue:happyTimeString forKey:kSince];
-    NSLog(@"File created and initialized.");
+  if(happyClicked == YES) {
+    
+    NSString * filePath = [AppHelper dataFilePath];
+    NSFileManager * fileManager = [[NSFileManager alloc] init];
+    
+    NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    
+    NSMutableDictionary * happiness;
+    NSString * happyString = [[NSString alloc] initWithFormat:@"%d", [happyToday happy]];
+    NSString * happyTimeString = [dateFormatter stringFromDate:[NSDate date]];
+    
+    if ([fileManager fileExistsAtPath:filePath]) {
+      happiness = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+      NSLog(@"Initialized from file with content: %@", happiness);    
+    } else {
+      happiness = [[NSMutableDictionary alloc] init];
+      [fileManager createFileAtPath:filePath contents:nil attributes:nil];
+      [happiness setValue:happyTimeString forKey:kSince];
+      NSLog(@"File created and initialized.");
+    }
+    
+    [happiness setValue:happyString forKey:happyTimeString];
+    NSLog(@"Happiness with the newest entry: %@", happiness);
+    
+    BOOL result = [happiness writeToFile:filePath atomically:YES];
+    NSLog(@"Written to file: %d", result);
+    
+    [fileManager release];
+    [happiness release];
+    [happyString release];
+    [dateFormatter release]; 
+    
   }
-
-  [happiness setValue:happyString forKey:happyTimeString];
-  NSLog(@"Happiness with the newest entry: %@", happiness);
-
-  BOOL result = [happiness writeToFile:filePath atomically:YES];
-  NSLog(@"Written to file: %d", result);
-  
-  [fileManager release];
-  [happiness release];
-  [happyString release];
-  [dateFormatter release];
 }
 
 /*
