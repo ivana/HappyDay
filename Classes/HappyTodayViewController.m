@@ -69,7 +69,7 @@
   NSString * happyString;
   
   NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
-  [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+  [dateFormatter setDateStyle:NSDateFormatterLongStyle];
   [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
   
   if ([fileManager fileExistsAtPath:filePath]) {
