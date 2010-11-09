@@ -17,8 +17,6 @@
 }
 @property (nonatomic, retain) HappyDay * happyToday;
 
--(NSString *) dataFilePath;
-
 -(IBAction) happyTodayClicked:(id)sender;
 
 -(void) applicationWillTerminate:(NSNotification *)notification;

@@ -8,23 +8,14 @@
 
 #import "HappyTodayViewController.h"
 #import "HappyDay.h"
+#import "AppHelper.h"
 
-#define kFilename @"data.plist"
 #define kYesTag 1
 
 
 @implementation HappyTodayViewController
 
 @synthesize happyToday;
-
-
--(NSString *) dataFilePath
-{ 
-  NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-  NSString * documentsDirectory = [paths objectAtIndex:0]; 
-  
-  return [documentsDirectory stringByAppendingPathComponent:kFilename];
-}
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -62,7 +53,7 @@
 
 -(void) applicationWillTerminate:(NSNotification *)notification
 {
-  NSString * filePath = [self dataFilePath];
+  NSString * filePath = [AppHelper dataFilePath];
   NSFileManager * fileManager = [[NSFileManager alloc] init];
   
   NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
@@ -79,14 +70,14 @@
   } else {
     happiness = [[NSMutableDictionary alloc] init];
     [fileManager createFileAtPath:filePath contents:nil attributes:nil];
-    [happiness setValue:happyTimeString forKey:@"since"];
+    [happiness setValue:happyTimeString forKey:kSince];
     NSLog(@"File created and initialized.");
   }
 
   [happiness setValue:happyString forKey:happyTimeString];
   NSLog(@"Happiness with the newest entry: %@", happiness);
 
-  BOOL result = [happiness writeToFile:[self dataFilePath] atomically:YES];
+  BOOL result = [happiness writeToFile:filePath atomically:YES];
   NSLog(@"Written to file: %d", result);
   
   [fileManager release];

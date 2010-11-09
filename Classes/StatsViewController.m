@@ -7,22 +7,12 @@
 //
 
 #import "StatsViewController.h"
-
-#define kFilename @"data.plist"
+#import "AppHelper.h"
 
 
 @implementation StatsViewController
 
 @synthesize infoLabel, sinceLabel, happyPercentageButton, statsPeriodPicker, statsPeriodData;
-
-
--(NSString *) dataFilePath
-{ 
-  NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-  NSString * documentsDirectory = [paths objectAtIndex:0]; 
-  
-  return [documentsDirectory stringByAppendingPathComponent:kFilename];
-}
 
 
 -(IBAction) percentageClicked:(id)sender
@@ -70,11 +60,11 @@
   
   /* init sinceLabel */
   NSFileManager * fileManager = [[NSFileManager alloc] init];
-  NSString * filePath = [self dataFilePath];
+  NSString * filePath = [AppHelper dataFilePath];
   
   if ([fileManager fileExistsAtPath:filePath]) {
     NSDictionary * happiness = [[NSDictionary alloc] initWithContentsOfFile:filePath];
-    NSString * firstDay = [happiness valueForKey:@"since"];
+    NSString * firstDay = [happiness valueForKey:kSince];
     [sinceLabel setText:[@"Tracking since " stringByAppendingString:firstDay]];
     [happiness release];
   } else {
