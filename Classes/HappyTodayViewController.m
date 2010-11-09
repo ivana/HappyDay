@@ -30,7 +30,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 -(void) viewDidLoad
 {
-  self.happyToday = [[HappyDay alloc] init];
+  happyToday = [[HappyDay alloc] init];
   
   UIApplication * app = [UIApplication sharedApplication]; 
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillTerminate:) name:UIApplicationWillTerminateNotification object:app];
@@ -45,10 +45,10 @@
   NSString * feedbackMessage = [[NSString alloc] init];
   
   if (buttonClicked.tag == kYesTag) {
-    [self.happyToday setHappy:YES];
+    [happyToday setHappy:YES];
     feedbackMessage = @"Good to hear! See you tomorrow!";
   } else {
-    [self.happyToday setHappy:NO];
+    [happyToday setHappy:NO];
     feedbackMessage = @"Sorry to hear that :( Hope things would be better tomorrow...";
   }
   
