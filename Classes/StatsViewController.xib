@@ -73,7 +73,7 @@
 					<object class="IBUILabel" id="122207455">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{44, 94}, {233, 18}}</string>
+						<string key="NSFrame">{{44, 89}, {233, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="344134796"/>
@@ -82,10 +82,10 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">Days: 456 happy. 123 crappy.</string>
-						<object class="NSFont" key="IBUIFont">
+						<string key="IBUIText">456 happy, 123 crappy. Days, off course</string>
+						<object class="NSFont" key="IBUIFont" id="668560210">
 							<string key="NSName">Helvetica</string>
-							<double key="NSSize">14</double>
+							<double key="NSSize">12</double>
 							<int key="NSfFlags">16</int>
 						</object>
 						<object class="NSColor" key="IBUITextColor">
@@ -100,7 +100,7 @@
 					<object class="IBUILabel" id="93822209">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{44, 353}, {233, 18}}</string>
+						<string key="NSFrame">{{44, 373}, {233, 18}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
@@ -110,11 +110,7 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<string key="IBUIText">Tracking since 21st December 2010</string>
-						<object class="NSFont" key="IBUIFont">
-							<string key="NSName">Helvetica</string>
-							<double key="NSSize">12</double>
-							<int key="NSfFlags">16</int>
-						</object>
+						<reference key="IBUIFont" ref="668560210"/>
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC42ODUwOTkxNTE5IDAuNzg3NjMzNDI2NyAwLjg4NTg2OTU2NTIAA</bytes>
@@ -219,8 +215,8 @@
 						<reference key="object" ref="191373211"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="424365924"/>
-							<reference ref="122207455"/>
 							<reference ref="344134796"/>
+							<reference ref="122207455"/>
 							<reference ref="93822209"/>
 						</array>
 						<reference key="parent" ref="0"/>
