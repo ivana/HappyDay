@@ -26,11 +26,11 @@
   if (happyPercentage >= 80) {
     happyDescMessage = @"Congrats! You're a happy person!";
   } else if (happyPercentage < 80 && happyPercentage > 50) {
-    happyDescMessage = @"Mostly happy. Still, there's a lot for you to be done.";
+    happyDescMessage = @"Mostly happy.";
   } else if (happyPercentage == 50) {
-    happyDescMessage = @"Even Steven. Cross to the bright side already!";
+    happyDescMessage = @"Even Steven.";
   } else { // happyPercentage < 50
-    happyDescMessage = @"Oh, dear. Seems like your days have been gloomy and blue :( Now do something about it!";
+    happyDescMessage = @"Oh, dear. Seems like your days have been gloomy and blue. Why not do something about it?";
   }
     
   UIAlertView * happyDesc = [[UIAlertView alloc] initWithTitle:happyDescTitle message:happyDescMessage delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
