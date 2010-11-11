@@ -138,31 +138,62 @@
   return [statsPeriodData objectAtIndex:row];
 }
 
+
 - (void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component 
 {
-//  NSString * selectedPeriod = [self.statsPeriodData objectAtIndex:row];
-  switch (row) {
-  case kFirstDay:
-    [self.happyPercentageButton setTitle:@"1% happy" forState:UIControlStateNormal];
-    break;
-  case k1week:
-    [self.happyPercentageButton setTitle:@"80% happy" forState:UIControlStateNormal];
-    break;
-  case k1month:
-    [self.happyPercentageButton setTitle:@"51% happy" forState:UIControlStateNormal];
-    break;
-  case k3months:
-    [self.happyPercentageButton setTitle:@"50% happy" forState:UIControlStateNormal];
-    break;
-  case k6months:
-    [self.happyPercentageButton setTitle:@"49% happy" forState:UIControlStateNormal];
-    break;
-  case k1year:
-    [self.happyPercentageButton setTitle:@"90% happy" forState:UIControlStateNormal];
-    break;
-  default:
-    [self.happyPercentageButton setTitle:@"0 luck" forState:UIControlStateNormal];
+  NSFileManager * fileManager = [[NSFileManager alloc] init];
+  NSString * filePath = [AppHelper dataFilePath];
+  
+  if ([fileManager fileExistsAtPath:filePath]) {
+    
+    NSMutableDictionary * happiness = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+    [happiness removeObjectForKey:kSince];
+
+    NSArray * happyValues;
+    float happyPercentage;
+    NSString * happyTitle;
+    
+    switch (row) {
+    case kFirstDay:
+      happyValues = [happiness allValues];
+        
+      float happySum = [[happyValues objectAtIndex:0] floatValue];
+      for (int i = 1; i < [happyValues count]; i++) {
+        happySum += [[happyValues objectAtIndex:i] floatValue];
+      }
+        
+      happyPercentage = happySum / [happyValues count] * 100;
+      happyTitle = [[NSString alloc] initWithFormat:@"%.0f%% happy", happyPercentage];
+        
+      [happyPercentageButton setTitle:happyTitle forState:UIControlStateNormal];
+
+      [happyTitle release];
+      break;
+        
+    case k1week:
+      [self.happyPercentageButton setTitle:@"80% happy" forState:UIControlStateNormal];
+      break;
+    case k1month:
+      [self.happyPercentageButton setTitle:@"51% happy" forState:UIControlStateNormal];
+      break;
+    case k3months:
+      [self.happyPercentageButton setTitle:@"50% happy" forState:UIControlStateNormal];
+      break;
+    case k6months:
+      [self.happyPercentageButton setTitle:@"49% happy" forState:UIControlStateNormal];
+      break;
+    case k1year:
+      [self.happyPercentageButton setTitle:@"90% happy" forState:UIControlStateNormal];
+      break;
+    default:
+      [self.happyPercentageButton setTitle:@"0 luck" forState:UIControlStateNormal];
+    }
+    
+//    [happyTitle release];
+    [happiness release];
   }
+  
+  [fileManager release];
 }
 
 @end
