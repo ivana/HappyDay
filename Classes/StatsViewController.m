@@ -9,6 +9,13 @@
 #import "StatsViewController.h"
 #import "AppHelper.h"
 
+#define kFirstDay 0
+#define k1week 1
+#define k1month 2
+#define k3months 3
+#define k6months 4
+#define k1year 5
+
 
 @implementation StatsViewController
 
@@ -132,22 +139,22 @@
 {
 //  NSString * selectedPeriod = [self.statsPeriodData objectAtIndex:row];
   switch (row) {
-  case 0: // from the first day
+  case kFirstDay:
     [self.happyPercentageButton setTitle:@"1% happy" forState:UIControlStateNormal];
     break;
-  case 1: // 1 week back
+  case k1week:
     [self.happyPercentageButton setTitle:@"80% happy" forState:UIControlStateNormal];
     break;
-  case 2: // 1 month back
+  case k1month:
     [self.happyPercentageButton setTitle:@"51% happy" forState:UIControlStateNormal];
     break;
-  case 3: // 3 months back
+  case k3months:
     [self.happyPercentageButton setTitle:@"50% happy" forState:UIControlStateNormal];
     break;
-  case 4: // 6 months back
+  case k6months:
     [self.happyPercentageButton setTitle:@"49% happy" forState:UIControlStateNormal];
     break;
-  case 5: // 1 year back
+  case k1year:
     [self.happyPercentageButton setTitle:@"90% happy" forState:UIControlStateNormal];
     break;
   default:
