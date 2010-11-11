@@ -64,8 +64,7 @@
   self.statsPeriodData = [[NSArray alloc] initWithObjects:@"from the first day", @"1 week back", @"1 month back", @"3 months back", @"6 months back", @"1 year back", nil];
   [self.statsPeriodPicker selectRow:1 inComponent:0 animated:NO]; // 1 week back is default
   
-  
-  /* init sinceLabel */
+  /* init sinceLabel & happyPercentageButton */
   NSFileManager * fileManager = [[NSFileManager alloc] init];
   NSString * filePath = [AppHelper dataFilePath];
   
@@ -75,7 +74,11 @@
     [sinceLabel setText:[@"Tracking since " stringByAppendingString:firstDay]];
     [happiness release];
   } else {
-    [sinceLabel setText:@"No happiness records yet."];
+    [happyPercentageButton setEnabled:NO];
+    [happyPercentageButton setTitle:@"Happy Day?" forState:UIControlStateDisabled];
+
+    [infoLabel setText:@"No entries about happiness yet."];
+    [sinceLabel setText:@""];
   }
 
   [fileManager release];
