@@ -39,10 +39,10 @@
   
   if (buttonClicked.tag == kYesTag) {
     [happyToday setHappy:YES];
-    feedbackMessage = @"Good to hear! See you tomorrow!";
+    feedbackMessage = @"Good to hear!";
   } else {
     [happyToday setHappy:NO];
-    feedbackMessage = @"Sorry to hear that :( Hope things would be better tomorrow...";
+    feedbackMessage = @"Sorry to hear that. After all, tomorrow is another day...";
   }
   
   UIAlertView * feedback = [[UIAlertView alloc] initWithTitle:nil message:feedbackMessage delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
