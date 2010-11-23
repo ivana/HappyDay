@@ -48,6 +48,7 @@
   [happyDescTitle release];
 }
 
+
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -57,6 +58,7 @@
     return self;
 }
 */
+
 
 - (void) viewDidLoad 
 {
@@ -86,6 +88,7 @@
   [super viewDidLoad];
 }
 
+
 /*
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -94,12 +97,14 @@
 }
 */
 
+
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
 }
+
 
 - (void) viewDidUnload
 {
@@ -120,8 +125,10 @@
   [super dealloc];
 }
 
+
 #pragma mark - 
 #pragma mark Picker Data Source Methods 
+
 - (NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView 
 {
   return 1;
@@ -132,7 +139,9 @@
   return [statsPeriodData count];
 } 
 
+
 #pragma mark Picker Delegate Methods 
+
 - (NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 { 
   return [statsPeriodData objectAtIndex:row];
@@ -149,30 +158,36 @@
     NSMutableDictionary * happiness = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
     [happiness removeObjectForKey:kSince];
 
-    NSArray * happyValues;
-    float happyPercentage;
-    NSString * happyTitle;
+    NSMutableArray * happyValues;
+    NSDate * today = [NSDate date];
+    NSDate * referenceDate;
+
+    NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
     
     switch (row) {
     case kFirstDay:
-      happyValues = [happiness allValues];
+      happyValues = [[NSMutableArray alloc] initWithArray:[happiness allValues]];
+      [self displayPercentage:happyValues];
+      break;
+                
+    case k1week:
+      happyValues = [[NSMutableArray alloc] initWithCapacity:7];
+      referenceDate = [today dateByAddingTimeInterval:(-7 * 24 * 60 * 60.0)];
+                
+      for (id day in happiness) {
+        // add 1h to get the correct date (smarter way?)
+        NSDate * happyDay = [[dateFormatter dateFromString:day] dateByAddingTimeInterval:(60 * 60.0)];
         
-      float happySum = [[happyValues objectAtIndex:0] floatValue];
-      for (int i = 1; i < [happyValues count]; i++) {
-        happySum += [[happyValues objectAtIndex:i] floatValue];
+        if ([happyDay compare:referenceDate] == NSOrderedDescending) {
+          [happyValues addObject:[happiness objectForKey:day]];
+        }
       }
         
-      happyPercentage = happySum / [happyValues count] * 100;
-      happyTitle = [[NSString alloc] initWithFormat:@"%.0f%% happy", happyPercentage];
-        
-      [happyPercentageButton setTitle:happyTitle forState:UIControlStateNormal];
-
-      [happyTitle release];
+      [self displayPercentage:happyValues];
       break;
         
-    case k1week:
-      [self.happyPercentageButton setTitle:@"80% happy" forState:UIControlStateNormal];
-      break;
     case k1month:
       [self.happyPercentageButton setTitle:@"51% happy" forState:UIControlStateNormal];
       break;
@@ -189,11 +204,27 @@
       [self.happyPercentageButton setTitle:@"0 luck" forState:UIControlStateNormal];
     }
     
-//    [happyTitle release];
+    [dateFormatter release];
     [happiness release];
+    [happyValues release];
   }
   
   [fileManager release];
+}
+
+
+#pragma mark Custom Methods
+-(void) displayPercentage:(NSMutableArray *)happyValues
+{
+  float happySum = [[happyValues objectAtIndex:0] floatValue];
+  for (int i = 1; i < [happyValues count]; i++) {
+    happySum += [[happyValues objectAtIndex:i] floatValue];
+  }
+  float happyPercentage = happySum / [happyValues count] * 100;
+  
+  NSString * happyTitle = [[NSString alloc] initWithFormat:@"%.0f%% happy", happyPercentage];  
+  [self.happyPercentageButton setTitle:happyTitle forState:UIControlStateNormal];
+  [happyTitle release];
 }
 
 @end

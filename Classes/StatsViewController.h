@@ -25,4 +25,6 @@
 
 -(IBAction) percentageClicked:(id)sender;
 
+-(void) displayPercentage:(NSMutableArray *)happyValues;
+
 @end
