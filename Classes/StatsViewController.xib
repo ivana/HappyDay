@@ -82,8 +82,8 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">456 happy, 123 crappy. Days, off course</string>
-						<object class="NSFont" key="IBUIFont" id="668560210">
+						<string key="IBUIText">456 happy, 123 crappy. Days, of course</string>
+						<object class="NSFont" key="IBUIFont" id="649690095">
 							<string key="NSName">Helvetica</string>
 							<double key="NSSize">12</double>
 							<int key="NSfFlags">16</int>
@@ -110,7 +110,7 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<string key="IBUIText">Tracking since 21st December 2010</string>
-						<reference key="IBUIFont" ref="668560210"/>
+						<reference key="IBUIFont" ref="649690095"/>
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC42ODUwOTkxNTE5IDAuNzg3NjMzNDI2NyAwLjg4NTg2OTU2NTIAA</bytes>
