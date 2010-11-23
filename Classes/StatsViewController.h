@@ -26,5 +26,6 @@
 -(IBAction) percentageClicked:(id)sender;
 
 -(void) displayPercentage:(NSMutableArray *)happyValues;
+-(void) extractValuesfromDictionary:(NSMutableDictionary *)happiness toArray:(NSMutableArray *)happyValues since:(NSDate *)referenceDate;
 
 @end

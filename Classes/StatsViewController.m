@@ -162,57 +162,45 @@
     NSDate * today = [NSDate date];
     NSDate * referenceDate;
 
-    NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateStyle:NSDateFormatterLongStyle];
-    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
-
     NSCalendar * calendar = [NSCalendar currentCalendar];
     NSDateComponents * dateComponents = [[NSDateComponents alloc] init];
     
-    switch (row) {
-    case kFirstDay:
-      happyValues = [[NSMutableArray alloc] initWithArray:[happiness allValues]];
-      [self displayPercentage:happyValues];
-      break;
-                
-    case k1week:
-      happyValues = [[NSMutableArray alloc] initWithCapacity:7];
+    if (row == kFirstDay) {
+      happyValues = [[NSMutableArray alloc] initWithArray:[happiness allValues]];     
 
-      [dateComponents setDay:(-7)];
-      referenceDate = [calendar dateByAddingComponents:dateComponents toDate:today options:0];
-      NSLog(@"%@", referenceDate);
-                
-      for (id day in happiness) {
-        // add 1h to get the correct date (smarter way?)
-        NSDate * happyDay = [[dateFormatter dateFromString:day] dateByAddingTimeInterval:(60 * 60.0)];
-        
-        if ([happyDay compare:referenceDate] == NSOrderedDescending) {
-          [happyValues addObject:[happiness objectForKey:day]];
-        }
+    } else {
+
+      switch (row) {
+        case k1week:
+          happyValues = [[NSMutableArray alloc] initWithCapacity:7];
+          [dateComponents setDay:(-7)];
+          break;          
+        case k1month:
+          happyValues = [[NSMutableArray alloc] initWithCapacity:20];
+          [dateComponents setMonth:(-1)];
+          break;          
+        case k3months:
+          happyValues = [[NSMutableArray alloc] initWithCapacity:[happiness count]];
+          [dateComponents setMonth:(-3)];
+          break;          
+        case k6months:
+          happyValues = [[NSMutableArray alloc] initWithCapacity:[happiness count]];
+          [dateComponents setMonth:(-6)];
+          break;          
+        case k1year:
+          happyValues = [[NSMutableArray alloc] initWithCapacity:[happiness count]];
+          [dateComponents setYear:(-1)];
+          break;
       }
-        
-      [self displayPercentage:happyValues];
-      break;
-        
-    case k1month:
-      [self.happyPercentageButton setTitle:@"51% happy" forState:UIControlStateNormal];
-      break;
-    case k3months:
-      [self.happyPercentageButton setTitle:@"50% happy" forState:UIControlStateNormal];
-      break;
-    case k6months:
-      [self.happyPercentageButton setTitle:@"49% happy" forState:UIControlStateNormal];
-      break;
-    case k1year:
-      [self.happyPercentageButton setTitle:@"90% happy" forState:UIControlStateNormal];
-      break;
-    default:
-      [self.happyPercentageButton setTitle:@"0 luck" forState:UIControlStateNormal];
+      
+      referenceDate = [calendar dateByAddingComponents:dateComponents toDate:today options:0];
+      [self extractValuesfromDictionary:happiness toArray:happyValues since:referenceDate];
     }
 
+    [self displayPercentage:happyValues];
+    
     [happiness release];
     [happyValues release];
-    [dateFormatter release];
     [dateComponents release];
   }
   
@@ -232,6 +220,24 @@
   NSString * happyTitle = [[NSString alloc] initWithFormat:@"%.0f%% happy", happyPercentage];  
   [self.happyPercentageButton setTitle:happyTitle forState:UIControlStateNormal];
   [happyTitle release];
+}
+
+
+-(void) extractValuesfromDictionary:(NSMutableDictionary *)happiness toArray:(NSMutableArray *)happyValues since:(NSDate *)referenceDate
+{  
+//  NSLog(@"reference date: %@", referenceDate);
+  NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
+  [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+  [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+
+  for (id day in happiness) {
+    NSDate * happyDay = [[dateFormatter dateFromString:day] dateByAddingTimeInterval:(60 * 60.0)]; // add 1h to get the correct date (smarter way?)        
+    if ([happyDay compare:referenceDate] == NSOrderedDescending) { // happyDay is later in time than referenceDate
+      [happyValues addObject:[happiness objectForKey:day]];
+    }
+  }  
+  
+  [dateFormatter release];
 }
 
 @end
