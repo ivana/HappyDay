@@ -165,6 +165,9 @@
     NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterLongStyle];
     [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+
+    NSCalendar * calendar = [NSCalendar currentCalendar];
+    NSDateComponents * dateComponents = [[NSDateComponents alloc] init];
     
     switch (row) {
     case kFirstDay:
@@ -174,7 +177,10 @@
                 
     case k1week:
       happyValues = [[NSMutableArray alloc] initWithCapacity:7];
-      referenceDate = [today dateByAddingTimeInterval:(-7 * 24 * 60 * 60.0)];
+
+      [dateComponents setDay:(-7)];
+      referenceDate = [calendar dateByAddingComponents:dateComponents toDate:today options:0];
+      NSLog(@"%@", referenceDate);
                 
       for (id day in happiness) {
         // add 1h to get the correct date (smarter way?)
@@ -203,10 +209,11 @@
     default:
       [self.happyPercentageButton setTitle:@"0 luck" forState:UIControlStateNormal];
     }
-    
-    [dateFormatter release];
+
     [happiness release];
     [happyValues release];
+    [dateFormatter release];
+    [dateComponents release];
   }
   
   [fileManager release];
