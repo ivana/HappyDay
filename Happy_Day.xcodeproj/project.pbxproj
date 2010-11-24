@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C43EB0B12622B61007872D6 /* HappyDayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C43EB0A12622B61007872D6 /* HappyDayTest.m */; };
-		2C43EB0C12622B7A007872D6 /* HappyDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C994ECA1262224600D00065 /* HappyDay.m */; };
 		2C8D27571289FFE50024FCBA /* AppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8D27561289FFE50024FCBA /* AppHelper.m */; };
 		2C994EA2126221AC00D00065 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C994EA1126221AC00D00065 /* UIKit.framework */; };
 		2C994EA4126221AC00D00065 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C994EA3126221AC00D00065 /* Foundation.framework */; };
@@ -17,7 +15,6 @@
 		2C994EAD126221AC00D00065 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C994EAC126221AC00D00065 /* main.m */; };
 		2C994EB0126221AC00D00065 /* Happy_DayAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C994EAF126221AC00D00065 /* Happy_DayAppDelegate.m */; };
 		2C994EB3126221AC00D00065 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C994EB1126221AC00D00065 /* MainWindow.xib */; };
-		2C994ECB1262224600D00065 /* HappyDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C994ECA1262224600D00065 /* HappyDay.m */; };
 		2CCD679D1265BD2F0006FC10 /* HappyTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD679B1265BD2F0006FC10 /* HappyTodayViewController.m */; };
 		2CCD679E1265BD2F0006FC10 /* HappyTodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CCD679C1265BD2F0006FC10 /* HappyTodayViewController.xib */; };
 		2CCD67A21265BD600006FC10 /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD67A01265BD600006FC10 /* StatsViewController.m */; };
@@ -31,8 +28,6 @@
 
 /* Begin PBXFileReference section */
 		2C30649712622368005E335D /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
-		2C43EB0512622B2B007872D6 /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C43EB0A12622B61007872D6 /* HappyDayTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HappyDayTest.m; sourceTree = "<group>"; };
 		2C8D27551289FFE50024FCBA /* AppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppHelper.h; sourceTree = SOURCE_ROOT; };
 		2C8D27561289FFE50024FCBA /* AppHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppHelper.m; sourceTree = SOURCE_ROOT; };
 		2C994E9E126221AC00D00065 /* Happy_Day.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happy_Day.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,8 +41,6 @@
 		2C994EAE126221AC00D00065 /* Happy_DayAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Happy_DayAppDelegate.h; sourceTree = "<group>"; };
 		2C994EAF126221AC00D00065 /* Happy_DayAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Happy_DayAppDelegate.m; sourceTree = "<group>"; };
 		2C994EB2126221AC00D00065 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		2C994EC91262224600D00065 /* HappyDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HappyDay.h; path = ../HappyDay.h; sourceTree = "<group>"; };
-		2C994ECA1262224600D00065 /* HappyDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HappyDay.m; path = ../HappyDay.m; sourceTree = "<group>"; };
 		2CCD679A1265BD2F0006FC10 /* HappyTodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HappyTodayViewController.h; sourceTree = "<group>"; };
 		2CCD679B1265BD2F0006FC10 /* HappyTodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HappyTodayViewController.m; sourceTree = "<group>"; };
 		2CCD679C1265BD2F0006FC10 /* HappyTodayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HappyTodayViewController.xib; path = Classes/HappyTodayViewController.xib; sourceTree = "<group>"; };
@@ -63,13 +56,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2C43EB0212622B2B007872D6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2C994E9B126221AC00D00065 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -83,14 +69,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2C43EB0812622B4A007872D6 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				2C43EB0A12622B61007872D6 /* HappyDayTest.m */,
-			);
-			name = Test;
-			sourceTree = "<group>";
-		};
 		2C994E8F126221AC00D00065 = {
 			isa = PBXGroup;
 			children = (
@@ -109,8 +87,6 @@
 				2C8D27551289FFE50024FCBA /* AppHelper.h */,
 				2C8D27561289FFE50024FCBA /* AppHelper.m */,
 				2CCD67991265BC480006FC10 /* VC */,
-				2C43EB0812622B4A007872D6 /* Test */,
-				2C994ECC1262225300D00065 /* Model */,
 				2C994EAE126221AC00D00065 /* Happy_DayAppDelegate.h */,
 				2C994EAF126221AC00D00065 /* Happy_DayAppDelegate.m */,
 			);
@@ -152,18 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				2C994E9E126221AC00D00065 /* Happy_Day.app */,
-				2C43EB0512622B2B007872D6 /* UnitTests.octest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		2C994ECC1262225300D00065 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				2C994EC91262224600D00065 /* HappyDay.h */,
-				2C994ECA1262224600D00065 /* HappyDay.m */,
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		2CCD67991265BC480006FC10 /* VC */ = {
@@ -202,24 +168,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2C43EB0412622B2B007872D6 /* UnitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2C43EB0912622B4A007872D6 /* Build configuration list for PBXNativeTarget "UnitTests" */;
-			buildPhases = (
-				2C43EB0012622B2B007872D6 /* Resources */,
-				2C43EB0112622B2B007872D6 /* Sources */,
-				2C43EB0212622B2B007872D6 /* Frameworks */,
-				2C43EB0312622B2B007872D6 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = UnitTests;
-			productName = UnitTests;
-			productReference = 2C43EB0512622B2B007872D6 /* UnitTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 		2C994E9D126221AC00D00065 /* Happy_Day */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C994EC2126221AC00D00065 /* Build configuration list for PBXNativeTarget "Happy_Day" */;
@@ -255,19 +203,11 @@
 			projectRoot = "";
 			targets = (
 				2C994E9D126221AC00D00065 /* Happy_Day */,
-				2C43EB0412622B2B007872D6 /* UnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2C43EB0012622B2B007872D6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2C994E9C126221AC00D00065 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -285,39 +225,13 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		2C43EB0312622B2B007872D6 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		2C43EB0112622B2B007872D6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2C43EB0C12622B7A007872D6 /* HappyDay.m in Sources */,
-				2C43EB0B12622B61007872D6 /* HappyDayTest.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2C994E9A126221AC00D00065 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2C994EAD126221AC00D00065 /* main.m in Sources */,
 				2C994EB0126221AC00D00065 /* Happy_DayAppDelegate.m in Sources */,
-				2C994ECB1262224600D00065 /* HappyDay.m in Sources */,
 				2CCD679D1265BD2F0006FC10 /* HappyTodayViewController.m in Sources */,
 				2CCD67A21265BD600006FC10 /* StatsViewController.m in Sources */,
 				2CCD67A71265BD770006FC10 /* SettingsViewController.m in Sources */,
@@ -347,66 +261,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		2C43EB0612622B2C007872D6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				INFOPLIST_FILE = "UnitTests-Info.plist";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					SenTestingKit,
-					"-framework",
-					UIKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = UnitTests;
-				SDKROOT = iphonesimulator4.0;
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		2C43EB0712622B2C007872D6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				INFOPLIST_FILE = "UnitTests-Info.plist";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					SenTestingKit,
-					"-framework",
-					UIKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = UnitTests;
-				SDKROOT = iphonesimulator4.0;
-				WRAPPER_EXTENSION = octest;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
 		2C994EC0126221AC00D00065 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -469,15 +323,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2C43EB0912622B4A007872D6 /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2C43EB0612622B2C007872D6 /* Debug */,
-				2C43EB0712622B2C007872D6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2C994E94126221AC00D00065 /* Build configuration list for PBXProject "Happy_Day" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
