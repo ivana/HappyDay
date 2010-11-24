@@ -21,6 +21,4 @@
 
 -(IBAction) happyTodayClicked:(id)sender;
 
--(void) applicationWillTerminate:(NSNotification *)notification;
-
 @end

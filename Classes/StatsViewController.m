@@ -21,6 +21,8 @@
 
 @synthesize infoLabel, sinceLabel, happyPercentageButton, statsPeriodPicker, statsPeriodData;
 
+#pragma mark -
+#pragma mark Action Methods
 
 - (IBAction) percentageClicked:(id)sender
 {
@@ -48,6 +50,8 @@
   [happyDescTitle release];
 }
 
+#pragma mark -
+#pragma mark Overridden Methods
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -126,7 +130,6 @@
   [super dealloc];
 }
 
-
 #pragma mark -
 #pragma mark Picker Data Source Methods 
 
@@ -139,7 +142,6 @@
 {
   return [statsPeriodData count];
 } 
-
 
 #pragma mark Picker Delegate Methods 
 

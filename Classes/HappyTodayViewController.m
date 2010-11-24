@@ -17,19 +17,8 @@
 
 @synthesize happyToday, happyClicked;
 
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
--(void) viewDidLoad
-{
-  happyToday = [[HappyDay alloc] init];
-  happyClicked = NO;
-  
-  UIApplication * app = [UIApplication sharedApplication]; 
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillTerminate:) name:UIApplicationWillTerminateNotification object:app];
-  
-  [super viewDidLoad];
-}
-
+#pragma mark -
+#pragma mark Action Methods
 
 -(IBAction) happyTodayClicked:(id)sender
 {
@@ -50,6 +39,20 @@
   
   [feedback release];
   [feedbackMessage release];
+}
+
+#pragma mark -
+#pragma mark Overridden / Implemented Methods
+
+-(void) viewDidLoad
+{
+  happyToday = [[HappyDay alloc] init];
+  happyClicked = NO;
+  
+  UIApplication * app = [UIApplication sharedApplication]; 
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillTerminate:) name:UIApplicationWillTerminateNotification object:app];
+  
+  [super viewDidLoad];
 }
 
 
@@ -87,7 +90,7 @@
     [fileManager release];
     [happiness release];
     [happyString release];
-    [dateFormatter release]; 
+    [dateFormatter release];
   }
 }
 
@@ -116,11 +119,13 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+
 -(void) viewDidUnload
 {
   self.happyToday = nil;
   [super viewDidUnload];
 }
+
 
 -(void) dealloc
 {
