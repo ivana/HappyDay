@@ -22,7 +22,7 @@
 @synthesize infoLabel, sinceLabel, happyPercentageButton, statsPeriodPicker, statsPeriodData;
 
 
--(IBAction) percentageClicked:(id)sender
+- (IBAction) percentageClicked:(id)sender
 {
   NSString * buttonTitle = [sender titleForState:UIControlStateNormal];
   NSInteger happyPercentage = [[[buttonTitle componentsSeparatedByString:@"%"] objectAtIndex:0] integerValue];
@@ -126,7 +126,7 @@
 }
 
 
-#pragma mark - 
+#pragma mark -
 #pragma mark Picker Data Source Methods 
 
 - (NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView 
@@ -207,9 +207,10 @@
   [fileManager release];
 }
 
-
+#pragma mark -
 #pragma mark Custom Methods
--(void) displayPercentage:(NSMutableArray *)happyValues
+
+- (void) displayPercentage:(NSMutableArray *)happyValues
 {
   float happySum = [[happyValues objectAtIndex:0] floatValue];
   for (int i = 1; i < [happyValues count]; i++) {
@@ -223,7 +224,7 @@
 }
 
 
--(void) extractValuesfromDictionary:(NSMutableDictionary *)happiness toArray:(NSMutableArray *)happyValues since:(NSDate *)referenceDate
+- (void) extractValuesfromDictionary:(NSMutableDictionary *)happiness toArray:(NSMutableArray *)happyValues since:(NSDate *)referenceDate
 {  
 //  NSLog(@"reference date: %@", referenceDate);
   NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];

@@ -88,7 +88,6 @@
     [happiness release];
     [happyString release];
     [dateFormatter release]; 
-    
   }
 }
 
