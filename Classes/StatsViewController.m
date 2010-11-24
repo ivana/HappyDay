@@ -64,7 +64,8 @@
 {
   /* init picker */
   self.statsPeriodData = [[NSArray alloc] initWithObjects:@"from the first day", @"1 week back", @"1 month back", @"3 months back", @"6 months back", @"1 year back", nil];
-  [self.statsPeriodPicker selectRow:1 inComponent:0 animated:NO]; // 1 week back is default
+  [self.statsPeriodPicker selectRow:k1week inComponent:0 animated:NO];
+  [self pickerView:statsPeriodPicker didSelectRow:k1week inComponent:0];
   
   /* init sinceLabel & happyPercentageButton */
   NSFileManager * fileManager = [[NSFileManager alloc] init];
