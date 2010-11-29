@@ -15,6 +15,7 @@
 		2C994EAD126221AC00D00065 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C994EAC126221AC00D00065 /* main.m */; };
 		2C994EB0126221AC00D00065 /* Happy_DayAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C994EAF126221AC00D00065 /* Happy_DayAppDelegate.m */; };
 		2C994EB3126221AC00D00065 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C994EB1126221AC00D00065 /* MainWindow.xib */; };
+		2CB2673412A439B400B2EBE2 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB2673312A439B400B2EBE2 /* icon.png */; };
 		2CCD679D1265BD2F0006FC10 /* HappyTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD679B1265BD2F0006FC10 /* HappyTodayViewController.m */; };
 		2CCD679E1265BD2F0006FC10 /* HappyTodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CCD679C1265BD2F0006FC10 /* HappyTodayViewController.xib */; };
 		2CCD67A21265BD600006FC10 /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD67A01265BD600006FC10 /* StatsViewController.m */; };
@@ -41,6 +42,7 @@
 		2C994EAE126221AC00D00065 /* Happy_DayAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Happy_DayAppDelegate.h; sourceTree = "<group>"; };
 		2C994EAF126221AC00D00065 /* Happy_DayAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Happy_DayAppDelegate.m; sourceTree = "<group>"; };
 		2C994EB2126221AC00D00065 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		2CB2673312A439B400B2EBE2 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		2CCD679A1265BD2F0006FC10 /* HappyTodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HappyTodayViewController.h; sourceTree = "<group>"; };
 		2CCD679B1265BD2F0006FC10 /* HappyTodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HappyTodayViewController.m; sourceTree = "<group>"; };
 		2CCD679C1265BD2F0006FC10 /* HappyTodayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HappyTodayViewController.xib; path = Classes/HappyTodayViewController.xib; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		2C994E98126221AC00D00065 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2CB2673312A439B400B2EBE2 /* icon.png */,
 				2CCD67AA1265BE090006FC10 /* Icons */,
 				2CCD67A91265BDEE0006FC10 /* VC */,
 				2C994EA7126221AC00D00065 /* Happy_Day-Info.plist */,
@@ -220,6 +223,7 @@
 				2CCD67AF1265BF500006FC10 /* happyday.png in Resources */,
 				2CCD67B01265BF500006FC10 /* settings.png in Resources */,
 				2CCD67B11265BF500006FC10 /* stats.png in Resources */,
+				2CB2673412A439B400B2EBE2 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
