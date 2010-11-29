@@ -208,7 +208,7 @@
       [self extractValuesfromDictionary:happiness toArray:happyValues since:referenceDate];
     }
 
-    [self displayPercentage:happyValues];
+    [self displayStats:happyValues];
     
     [happiness release];
     [happyValues release];
@@ -221,7 +221,7 @@
 #pragma mark -
 #pragma mark Custom Methods
 
-- (void) displayPercentage:(NSMutableArray *)happyValues
+- (void) displayStats:(NSMutableArray *)happyValues
 {
   float happySum = [[happyValues objectAtIndex:0] floatValue];
   for (int i = 1; i < [happyValues count]; i++) {
@@ -232,12 +232,17 @@
   NSString * happyTitle = [[NSString alloc] initWithFormat:@"%.0f%% happy", happyPercentage];  
   [self.happyPercentageButton setTitle:happyTitle forState:UIControlStateNormal];
   [happyTitle release];
+  
+  NSUInteger happyDays = (NSUInteger) happySum;
+  NSUInteger crappyDays = [happyValues count] - happyDays;
+  NSString * infoText = [[NSString alloc] initWithFormat:@"%d happy, %d crappy. Days, of course", happyDays, crappyDays];
+  [self.infoLabel setText:infoText];
+  [infoText release];
 }
 
 
 - (void) extractValuesfromDictionary:(NSMutableDictionary *)happiness toArray:(NSMutableArray *)happyValues since:(NSDate *)referenceDate
-{  
-//  NSLog(@"reference date: %@", referenceDate);
+{
   NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
   [dateFormatter setDateStyle:NSDateFormatterLongStyle];
   [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
