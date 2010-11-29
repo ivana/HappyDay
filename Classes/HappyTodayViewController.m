@@ -17,7 +17,7 @@
 #pragma mark -
 #pragma mark Action Methods
 
--(IBAction) happyTodayClicked:(id)sender
+- (IBAction) happyTodayClicked:(id)sender
 {
   UIButton * buttonClicked = (UIButton *) sender;
   NSString * feedbackMessage = [[NSString alloc] init];

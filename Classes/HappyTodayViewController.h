@@ -12,6 +12,6 @@
 @interface HappyTodayViewController : UIViewController
 {}
 
--(IBAction) happyTodayClicked:(id)sender;
+- (IBAction) happyTodayClicked:(id)sender;
 
 @end

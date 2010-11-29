@@ -23,7 +23,7 @@
 @property (nonatomic, retain) IBOutlet UIPickerView * statsPeriodPicker;
 @property (nonatomic, retain) NSArray * statsPeriodData;
 
--(IBAction) percentageClicked:(id)sender;
+- (IBAction) percentageClicked:(id)sender;
 
 - (void) displayStats:(NSMutableArray *)happyValues;
 - (void) extractValuesfromDictionary:(NSMutableDictionary *)happiness toArray:(NSMutableArray *)happyValues since:(NSDate *)referenceDate;
