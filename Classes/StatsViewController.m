@@ -94,6 +94,14 @@
 }
 
 
+- (void) viewDidAppear:(BOOL)animated
+{
+  NSInteger selectedRow = [statsPeriodPicker selectedRowInComponent:0];
+  [self pickerView:statsPeriodPicker didSelectRow:selectedRow inComponent:0];
+  [super viewDidAppear:YES];
+}
+
+
 /*
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
