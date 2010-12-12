@@ -34,7 +34,7 @@
     feedbackMessage = @"Sorry to hear that. After all, tomorrow is another day...";
   }
   
-  UIAlertView * feedback = [[UIAlertView alloc] initWithTitle:feedbackTitle message:feedbackMessage delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
+  UIAlertView * feedback = [[UIAlertView alloc] initWithTitle:feedbackTitle message:feedbackMessage delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
   [feedback show];
   
   [feedback release];
