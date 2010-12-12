@@ -21,21 +21,25 @@
 {
   UIButton * buttonClicked = (UIButton *) sender;
   NSString * feedbackMessage = [[NSString alloc] init];
+  NSString * feedbackTitle = [[NSString alloc] init];
   BOOL happy;
   
   if (buttonClicked.tag == kYesTag) {
     happy = YES;
+    feedbackTitle = @"Happy";
     feedbackMessage = @"Good to hear!";
   } else {
     happy = NO;
+    feedbackTitle = @"Not happy";
     feedbackMessage = @"Sorry to hear that. After all, tomorrow is another day...";
   }
   
-  UIAlertView * feedback = [[UIAlertView alloc] initWithTitle:nil message:feedbackMessage delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
+  UIAlertView * feedback = [[UIAlertView alloc] initWithTitle:feedbackTitle message:feedbackMessage delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
   [feedback show];
   
   [feedback release];
   [feedbackMessage release];
+  [feedbackTitle release];
   
   /* save to plist */
   
