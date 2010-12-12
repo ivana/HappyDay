@@ -30,7 +30,7 @@
     feedbackMessage = @"Good to hear!";
   } else {
     happy = NO;
-    feedbackTitle = @"Not happy";
+    feedbackTitle = @"Not Happy";
     feedbackMessage = @"Sorry to hear that. After all, tomorrow is another day...";
   }
   
